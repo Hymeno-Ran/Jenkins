@@ -6,13 +6,13 @@ pipeline {
         DEPLOY_ENV = '' // Simulate missing environment variable
     }
     stages {
-        // stage('Build') {
-        //     steps {
-        //         script{
-        //             build('estatment')
-        //         }
-        //     }
-        // }
+        stage('Build') {
+            steps {
+                script{
+                    build('estatment')
+                }
+            }
+        }
         stage('Test') {
             steps {
                 script{
