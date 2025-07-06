@@ -6,6 +6,13 @@ pipeline {
         DEPLOY_ENV = 'ABC' // Simulate missing environment variable
     }
     stages {
+        stage('Path Check') {
+            steps {
+                script {
+                    pathCheck('/src/example/App.java')
+                }
+            }
+        }
         stage('Build') {
             steps {
                 script{
