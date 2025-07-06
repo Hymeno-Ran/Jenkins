@@ -17,6 +17,7 @@ pipeline {
             steps {
                 script{
                     sonarqube("testatment", "Test Project")
+                }
             }
         }
         stage('Deploy') {
