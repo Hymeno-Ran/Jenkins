@@ -1,3 +1,6 @@
+libraries(
+    'jenkins-shared-library@master')
+
 pipeline {
     agent any
     environment {
@@ -6,8 +9,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building the application...'
-                sh 'npm install' // Example build step
+                script{
+                    build("testatment")
+                }
             }
         }
         stage('Test') {
