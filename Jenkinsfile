@@ -3,20 +3,20 @@
 pipeline {
     agent any
     environment {
-        DEPLOY_ENV = '' // Simulate missing environment variable
+        DEPLOY_ENV = 'ABC' // Simulate missing environment variable
     }
     stages {
         stage('Build') {
             steps {
                 script{
-                    build()
+                    build('/src/example/App.java')
                 }
             }
         }
         stage('Test') {
             steps {
                 script{
-                    sonarqube()
+                    sonarqube(DEPLOY_ENV, '/src/example/App.java')
                 }
             }
         }

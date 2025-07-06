@@ -1,8 +1,8 @@
 // templates/build.groovy
-def call() {
+def call(String projectName) {
     stage('Build') {
-        echo "Building project: "
+        echo "Building project: ${pathApp}"
         // Thêm lệnh build ở đây, ví dụ:
-        // sh 'mvn clean install'
+        sh "'javac -d target ${pathApp}'"
     }
 }
