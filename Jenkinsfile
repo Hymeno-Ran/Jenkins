@@ -9,14 +9,14 @@ pipeline {
         stage('Build') {
             steps {
                 script{
-                    build('estatment')
+                    build()
                 }
             }
         }
         stage('Test') {
             steps {
                 script{
-                    sonarqube('testatment', 'Test Project')
+                    sonarqube()
                 }
             }
         }

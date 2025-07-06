@@ -1,13 +1,13 @@
 // templates/sonarqube.groovy
-def call(String projectKey, String projectName) {
+def call() {
     stage('SonarQube Analysis') {
         script {
             echo "Running SonarQube analysis for project: ${projectName}"
             // Lệnh chạy SonarQube Scanner
             sh """
                 sonar-scanner \
-                -Dsonar.projectKey=${projectKey} \
-                -Dsonar.projectName=${projectName} \
+                -Dsonar.projectKey=aaa \
+                -Dsonar.projectName=bbb \
                 -Dsonar.sources=src
             """
         }
