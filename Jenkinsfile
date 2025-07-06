@@ -15,8 +15,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Running tests...'
-                sh 'npm test' // Example test step
+                script{
+                    sonarqube("testatment", "Test Project")
             }
         }
         stage('Deploy') {
